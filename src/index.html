@@ -18,10 +18,21 @@
       rel="stylesheet"
       href="../node_modules/@fortawesome/fontawesome-free/css/solid.css" />
 
+    <script type="module" defer>
+      import { handleSubmit } from "./index.js";
+      window.addEventListener("DOMContentLoaded", (event) => {
+        const myForm = document.getElementById("myForm");
+        myForm.onsubmit = handleSubmit;
+      });
+    </script>
+
     <title>Gifeels: Let a gif show you how you feel</title>
   </head>
-  <body>
-    <form action="#">
+  <body onload="console.log('body onload')">
+    <div>
+      <a href="/">Home</a>
+    </div>
+    <form id="myForm">
       <label for="input-feel">I feel </label>
       <input type="text" name="feel" id="input-feel" />
       <input type="submit" />
