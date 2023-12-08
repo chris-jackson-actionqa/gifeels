@@ -17,6 +17,7 @@
     <link
       rel="stylesheet"
       href="../node_modules/@fortawesome/fontawesome-free/css/solid.css" />
+    <link rel="stylesheet" href="./style.css" />
 
     <script type="module" defer>
       import { handleSubmit } from "./index.js";
@@ -29,16 +30,34 @@
     <title>Gifeels: Let a gif show you how you feel</title>
   </head>
   <body onload="console.log('body onload')">
-    <div>
-      <a href="/">Home</a>
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <form id="myForm">
+            <div class="input-group">
+              <label
+                for="input-feel"
+                id="label-feel"
+                class="form-label input-group-text"
+                >I feel
+              </label>
+              <input
+                type="text"
+                name="feel"
+                id="input-feel"
+                class="form-control form-control-lg" />
+            </div>
+            <input type="submit" class="btn btn-primary" />
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div id="gif-display-area"></div>
+        </div>
+      </div>
+      <!-- Bootstrap JavaScript plugins -->
+      <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
     </div>
-    <form id="myForm">
-      <label for="input-feel">I feel </label>
-      <input type="text" name="feel" id="input-feel" />
-      <input type="submit" />
-    </form>
-    <div id="gif-display-area"></div>
-    <!-- Bootstrap JavaScript plugins -->
-    <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
   </body>
 </html>
